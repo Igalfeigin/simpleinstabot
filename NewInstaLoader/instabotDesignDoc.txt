@@ -1,0 +1,54 @@
+Documentation for Instagram Bot (Currently using instaloader). 
+made by Igal Feigin
+the goal is to make my own API eventually.
+--------------------------------
+Integrated:
+
+Followers(username, password, profile)
+################################
+uses instaloader to log into your instagram profile and
+returns your followers, into a .txt file named "followers"
+################################
+username - is for your username,
+password - is for your password,
+profile - profile is for the profile you want to scrape, leave blank for your own.
+
+================================
+Following(username, password, profile)
+################################
+uses instaloader to log into your instagram profile and
+returns your following(people you are following), into a .txt file named "following"
+################################
+username - is for your username,
+password - is for your password,
+profile - profile is for the profile you want to scrape, leave blank for your own.
+
+================================
+fBack(profile)
+################################
+uses instaloader to log into your instagram profile and
+return a list of people that arent following you back
+(could be used by the bot to unfollow the people that dont follow you back)
+################################
+profile - profile that you want to scrape, leave blank for your own. // also uses ldiffer(list1,list2) - basically checks the lists and returns differences.
+
+not yet Integrated:
+================================
+unfollowBack(unkwn) W.I.P
+################################
+uses the fBack function to get a list of people that dont follow you back, 
+and then unfollows them by using *unkwn*.
+################################
+unkwn
+(could use a list of people you cant unfollow)
+
+================================
+follow(unkwn) W.I.P
+################################
+follows a certain amount of people from your following list.
+################################
+unkwn
+
+================================
+GUI Features:
+!unkwn!
