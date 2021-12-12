@@ -1,9 +1,10 @@
 from second import *
-from selenium import *
+from seleniumb import *
 
-username = "<Insert Your Username Here>"
-password = "<Insert Your Password Here>"
+username = "pedohere_44"
+password = "y5903206"
 
+selstart(username,password)
 # login.
 L.login(username, password)
 
