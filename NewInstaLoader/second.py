@@ -22,6 +22,7 @@ def Followers(username, password, profile):
         file.close()
         count = count + 1
     # print(follow_list) - used for debug
+    return follow_list
 
 # scrapes for the followees, enter username variable and password variable
 # leave profile empty for your own profile
@@ -43,7 +44,7 @@ def Following(username, password, profile):
         file.close()
         count = count + 1
     # print(following_list) - used for debug
-
+    return following_list
 # finds people that dont follow back.
 # enter profile name variable
 def fBack(user):

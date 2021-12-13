@@ -1,12 +1,22 @@
 from second import *
 from seleniumb import *
 
-username = "pedohere_44"
-password = "y5903206"
+#<Important Variables>
+username = ""
+password = ""
+path = r"C:\Users\igalg\Downloads\geckodriver\geckodriver.exe"
 
-selstart(username,password)
+# load the selenium, enter the account
+# selstart()
+
+
 # login.
 L.login(username, password)
 
+#follows random people.
+FollowRandom(username,password,username,path)
+
+
 #if using the unfollow, a list of poeple you dont want to be unfollowed.  (W.I.P)
 starpeople = ['mkbhd','carthrottle','pewdiepie']
+
