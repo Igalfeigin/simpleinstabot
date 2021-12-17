@@ -26,7 +26,7 @@ def Followers(username, password, profile):
 
 # scrapes for the followees, enter username variable and password variable
 # leave profile empty for your own profile
-def Following(username, password, profile):
+def Following(username, profile):
     if profile == "":
         profile = username
 
