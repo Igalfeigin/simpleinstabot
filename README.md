@@ -1,5 +1,20 @@
 # simpleinstabot
-awfully simply instagram bot - uses selenium and instaloader
+awfully simply instagram bot.
+
 --------------------------------
-working on a selenium features, currently only returns your followers, people you are following and people that dont follow you back.
-should add more soon.
+
+make sure to:
+
+```
+pip install selenium
+```
+
+and:
+
+```
+pip install instaloader
+```
+
+also have firefox installed on your computer as well as getting a geckodriver.
+
+also add your username and password in the allocated places, aswell as putting your geckodriver path in the variable spot.
