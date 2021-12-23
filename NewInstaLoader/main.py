@@ -5,9 +5,8 @@ username = ""
 password = ""
 path = r""
 
-L.login(username,password)
 #follows random people.
-Bot.FollowAccount(username,password,"coding_comedy")
+print(Bot.FFR(username))
 
 
 #if using the unfollow, a list of poeple you dont want to be unfollowed.  (W.I.P)

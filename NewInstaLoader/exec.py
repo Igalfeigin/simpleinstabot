@@ -1,20 +1,35 @@
 # Imports
+from instaloader.structures import Profile
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import random
 from typing import Counter
 import instaloader
+from bs4 import BeautifulSoup
 
 # imports path
+L = instaloader.Instaloader()
 path = r""
 
+username = ""
+password = ""
+
+L.login(username,password)
+
 # Starting Instaloader And WebDriver
-L = instaloader.Instaloader()
 driver = webdriver.Firefox(executable_path=path)
 
 # Main Code 
 class Bot():
+    def FollowingCount(usermame):
+        Profile = instaloader.Profile.from_username(L.context, username)
+        return len(set(Profile.get_followees()))
+
+    def FollowersCount(usermame):
+        Profile = instaloader.Profile.from_username(L.context, username)
+        return len(set(Profile.get_followers()))
+
     # returns list differnece
     def ldiffer(list1, list2):
         list_difference = []
@@ -33,10 +48,10 @@ class Bot():
         count = 0
         for follower in profile.get_followers():
             follow_list.append(follower.username)
-            file = open("followers.txt", "a+")
-            file.write(follow_list[count])
-            file.write("\n")
-            file.close()
+            #file = open("followers.txt", "a+")
+          #  file.write(follow_list[count])
+          #  file.write("\n")
+          #  file.close()
             count = count + 1
         return follow_list
     
@@ -50,13 +65,13 @@ class Bot():
         count = 0
         for follower in profile.get_followees():
             following_list.append(follower.username)
-            file = open("following.txt", "a+")
-            file.write(following_list[count])
-            file.write("\n")
-            file.close()
+            #file = open("following.txt", "a+")
+            #file.write(following_list[count])
+            #file.write("\n")
+            #file.close()
             count = count + 1
         return following_list
-    
+
     def fBack(user):
         profile = instaloader.Profile.from_username(L.context, user)
 
@@ -173,3 +188,19 @@ class Bot():
             file.close()
             sleep(random.randint(2, 8))
             followvartemp = followvartemp + 1  
+    
+    def FFR(person):
+        FollowingList =Bot.Following(person, person)
+        list = []
+        temp = 0 
+        while temp < len(FollowingList):
+            driver.get("https://www.instagram.com/" + FollowingList[temp])
+            soup = BeautifulSoup(driver.page_source,"html.parser")
+            driver.quit()
+
+            for title in soup.select("._h9luf"):
+                    follower = title.select("._fd86t")[1]['title']
+                    following = title.select("._fd86t")[2].text
+            if following > follower:
+                list.append(FollowingList[temp])
+        return list 
