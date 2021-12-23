@@ -1,5 +1,5 @@
 # simpleinstabot
-awfully simply instagram bot.
+awfully simply instagram bot using instaloader and selenium.
 
 --------------------------------
 
@@ -15,6 +15,8 @@ and:
 pip install instaloader
 ```
 
-also have firefox installed on your computer as well as getting a geckodriver.
+get your geckodriver here :
+https://github.com/mozilla/geckodriver/releases
 
-also add your username and password in the allocated places, aswell as putting your geckodriver path in the variable spot.
+make sure to save the path of the geckodriver(it will look like so C:/xxx/xxx/xxx/geckodriver.exe) and add it to path variable.
+also add your username to the username variable and password to the password variable
